@@ -9,7 +9,7 @@ https://yuhuiwu92.github.io/meet-app/
 
 ## Features and Requirements
 
-### Key Features:
+### Key Features:u
 
 ● Filter events by city.
 ● Show/hide event details.
@@ -29,4 +29,4 @@ https://yuhuiwu92.github.io/meet-app/
 
 ### Technical Details
 
-A React application. Built using the TDD technique. Uses the Google Calendar API and OAuth2 authentication flow. Uses serverless functions (AWS lambda) for the authorization server instead of using a traditional server. Passes Lighthouse’s PWA checklist. Works offline or in slow network conditions with the help of a service worker. The API calls use React axios and async/await. Implements an alert system using an OOP approach to show information to the user.
+A React applcation. Built using the TDD technique. Uses the Google Calendar API and OAuth2 authentication flow. Uses serverless functions (AWS lambda) for the authorization server instead of using a traditional server. Passes Lighthouse’s PWA checklist. Works offline or in slow network conditions with the help of a service worker. The API calls use React axios and async/await. Implements an alert system using an OOP approach to show information to the user.
