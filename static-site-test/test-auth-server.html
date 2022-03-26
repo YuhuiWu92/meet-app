@@ -26,18 +26,21 @@
           <!-- resultLink -->
           <a id="authURL" href target="_blank">Click to authorise</a>
 
-
-
-          <h4><b>Step 2:</b> Get your code and exchange for an access token</h4>
-          <p>After you are redirected back to your Meet app on GitHub, copy the code from the URI.</p>
+          <h4>Step 2: Get your code and exchange for an access token</h4>
+          <p>
+            After you are redirected back to your Meet app on GitHub, copy the code from the URI.
+          </p>
+          <br>
           <label for="codeinput">
-            Code input <input type="text" id="codeinput" value="" >
+            Code input 
+            <input type="text" id="code" value="" >
           </label>
           <!-- getAccessToken -->
           <button id="getToken">Get Token</button>
         <!-- accessTokenElement -->
           <p id="accessToken"></p>
-          
+      </main>      
+
       <script type="text/javascript">
           // step 1      
         const getCodeElement = document.getElementById('getCode')
@@ -45,28 +48,28 @@
         const resultLink = document.getElementById('authURL')
           // YOUR_LAMBDA_GET_AUTH_URL_ENDPOINT
         const getAuthURL = "https://37i4lmp3c0.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
-//点击按钮Get OAuth URL，得到getAuthURL的链接，显示在resultElement里面。
+
         getCodeElement.onclick = function(){
             fetch(getAuthURL)
             .then(function(response){
-                let Abb = response.json()
-                return Abb;
-                console.log(Abb)
-            }).then(function(json){
-                const result = JSON.stringify(json);
-            // we get the value of authUrl
-            const { authUrl } = JSON.parse(result);
-            // then add it to the html
-            resultElement.innerText = result;
-            resultLink.href = authUrl;
+                return response.json();
             })
-            .catch((err)=>console.log(err.message));
+            .then(function(json){
+                const result = JSON.stringify(json);
+
+            // we get the value of authUrl
+                const { authUrl } = JSON.parse(result);
+            // then add it to the html
+                resultElement.innerText = result;
+                resultLink.href = authUrl;
+                })
+            //.catch((err)=>console.log(err.message));
         }
         // step 2   
-        const codeValue = document.getElementById('codeinput')
-        const getAccessToken = document.getElementById('getToken')
-        const accessTokenElement = document.getElementById('accessToken')
-        const getToken = "https://37i4lmp3c0.execute-api.eu-central-1.amazonaws.com/dev/api/token"
+        const codeValue = document.getElementById('code');
+        const getAccessToken = document.getElementById('getToken');
+        const accessTokenElement = document.getElementById('accessToken');
+        const getToken = "https://37i4lmp3c0.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
         getAccessToken.onclick = function(){
             let code = codeValue.value;
@@ -83,8 +86,8 @@
                 function(json){
                     accessTokenElement.innerText = JSON.stringify(json);
                 }
-            )
-        }
+            );
+        };
       </script>
-</body>
+    </body>
 </html>
