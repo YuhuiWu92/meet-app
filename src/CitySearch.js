@@ -5,6 +5,11 @@ export default class CitySearch extends Component {
     query: "",
     suggestions: [],
   };
+  handleItemClicked = (suggestion) => {
+    this.setState({
+      query: suggestion,
+    });
+  };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
@@ -29,9 +34,14 @@ export default class CitySearch extends Component {
         />
         <ul className="suggestions">
           {this.state.suggestions.map((suggestion) => (
-            <li key={suggestion}>{suggestion}</li>
+            <li
+              key={suggestion}
+              onClick={() => this.handleItemClicked(suggestion)}
+            >
+              {suggestion}
+            </li>
           ))}
-          <li key="all">
+          <li>
             <b>See all cities</b>
           </li>
         </ul>
