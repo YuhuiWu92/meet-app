@@ -82,5 +82,5 @@ const mockData = [
     eventType: "default",
   },
 ];
-
+JSON.parse(JSON.stringify(mockData));
 export { mockData };
