@@ -57,6 +57,7 @@ export const getEvents = async () => {
     return result.data.events;
   }
 };
+
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];

@@ -35,6 +35,15 @@ describe("<App /> integration", () => {
     AppWrapper.unmount();
   });
 
+  /* making sure that NumberOfEvents gets numberOfEvents as a prop from App */
+  test('App passes "numberOfEvents" state as a prop to EventList', (events) => {
+    const AppWrapper = mount(<App />);
+    const AppNumberState = AppWrapper.state("numberOfEvents");
+    expect(AppNumberState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(32);
+    AppWrapper.unmount();
+  });
+
   test('App passes "locations" state as a prop to CitySearch', () => {
     const AppWrapper = mount(<App />);
     const AppLocationsState = AppWrapper.state("locations");
@@ -44,6 +53,24 @@ describe("<App /> integration", () => {
     );
     AppWrapper.unmount();
   });
+  /* 
+  test("get list of events matching the city selected by the user", async () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    //const locations = extractLocations(mockData);
+    NumberOfEventsWrapper.setState({ numberOfEvents:  });
+    const numObject = NumberOfEventsWrapper.state("numObject");
+    // in this way you can get a index from range (0 to length-1)
+    const numberIndex = Math.floor(Math.random() * numObject.length);
+    const selectedNumberOfEvents = numObject[numberIndex];
+    await NumberOfEventsWrapper.instance().handelInputNum(selectedNumberOfEvents);
+    const allEvents = await getEvents();
+    const eventsToList = allEvents.filter(
+      (event) => event.length === selectedNumberOfEvents
+    );
+    expect(AppWrapper.state("numberOfEvents")).toEqual(eventsToList);
+    AppWrapper.unmount();
+  }); */
 
   test("get list of events matching the city selected by the user", async () => {
     const AppWrapper = mount(<App />);
@@ -71,4 +98,27 @@ describe("<App /> integration", () => {
     expect(AppWrapper.state("events")).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
+  /*  test('get 32 events by default', () => {
+    //测试appwapper上的events数量是否等于num
+    const AppWrapper = mount(<App />);
+    const CitySearchWrapper = AppWrapper.find(CitySearch);
+    const locations = extractLocations(mockData);
+    CitySearchWrapper.setState({ suggestions: locations });
+    const suggestions = CitySearchWrapper.state("suggestions");
+    // in this way you can get a index from range (0 to length-1)
+    const selectedIndex = Math.floor(Math.random() * suggestions.length);
+    const selectedCity = suggestions[selectedIndex];
+    await CitySearchWrapper.instance().handleItemClicked(selectedCity);
+    const allEvents = await getEvents();
+    const eventsToShow = allEvents.filter(
+      (event) => event.location === selectedCity
+    );
+    expect(AppWrapper.state("events")).toEqual(eventsToShow);
+    AppWrapper.unmount();
+  }) */
+
+  /*  test('get the number of events, as the users set', () => {
+
+   }) */
 });

@@ -9,12 +9,14 @@ describe("<NumberOfEvents /> component", () => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
   });
   test("render input number", () => {
-    expect(NumberOfEventsWrapper.find(".inputNumber")).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find(".inputNumberOfEvents")).toHaveLength(1);
   });
 
   test("renders number input correctly", () => {
-    const num = NumberOfEventsWrapper.state("num");
-    expect(NumberOfEventsWrapper.find(".inputNumber").prop("value")).toBe(num);
+    const numberOfEvents = NumberOfEventsWrapper.state("numberOfEvents");
+    expect(
+      NumberOfEventsWrapper.find(".inputNumberOfEvents").prop("value")
+    ).toBe(numberOfEvents);
   });
 
   /* test("by default the number is 32", () => {
@@ -26,8 +28,8 @@ describe("<NumberOfEvents /> component", () => {
 
   test("change state when number input changes", () => {
     NumberOfEventsWrapper.setState({
-      num: 32,
+      numberOfEvents: 32,
     });
-    expect(NumberOfEventsWrapper.state("num")).toEqual(32);
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).toEqual(32);
   });
 });
