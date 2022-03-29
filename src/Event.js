@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 //import { mockData } from "../mock-data";
+import { Button } from "react-bootstrap";
 
 export default class Event extends Component {
   state = {
@@ -25,9 +26,13 @@ export default class Event extends Component {
           <p className="location">
             @{event.summary} | {event.location}
           </p>
-          <button className="details-btn" onClick={() => this.handleDetail()}>
+          <Button
+            variant="outline-success"
+            className="details-btn"
+            onClick={() => this.handleDetail()}
+          >
             Details
-          </button>
+          </Button>
         </div>
         {!collapsed && (
           <div
