@@ -34,6 +34,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+  font-weight: 700;
 }
 
 .city {
@@ -73,7 +74,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #cee6c3;
 }
 
 .event {
@@ -84,15 +85,24 @@ input[type="number"] {
   border-radius: 4px;
   position: relative;
 }
-
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+}
+.box-details {
+  right: 15px;
+  margin-bottom: 5px;
+  bottom: 10px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background-color: #cee6c3;
 }
 
 .name {

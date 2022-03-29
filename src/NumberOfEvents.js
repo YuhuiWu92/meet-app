@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 export default class NumberOfEvents extends Component {
   state = {
-    num: "",
+    num: 32,
+    numObject: 32,
   };
   handelInputNum = (event) => {
     const numObject = event.target.value;
@@ -11,7 +12,7 @@ export default class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        <h6>Number of Events:</h6>
+        <h5> Number of Events:</h5>
         <input
           type="number"
           className="inputNumber"
