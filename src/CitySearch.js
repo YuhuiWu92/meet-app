@@ -9,6 +9,7 @@ export default class CitySearch extends Component {
     this.setState({
       query: suggestion,
     });
+    this.props.updateEvents(suggestion);
   };
 
   handleInputChanged = (event) => {
@@ -41,7 +42,11 @@ export default class CitySearch extends Component {
               {suggestion}
             </li>
           ))}
-          <li>
+          <li
+            onClick={() => {
+              this.handleItemClicked("all");
+            }}
+          >
             <b>See all cities</b>
           </li>
         </ul>
