@@ -29,6 +29,7 @@ export default class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
+        <h5>search events in your city</h5>
         <input
           type="text"
           className="city"

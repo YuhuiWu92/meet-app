@@ -10,6 +10,7 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    currentLocation: "all",
   };
   componentDidMount() {
     this.mounted = true;
@@ -27,12 +28,11 @@ class App extends Component {
     this.mounted = false;
   }
   updateNumberOfEvents = (numberOfEvents) => {
-    this.setState(
-      {
-        numberOfEvents,
-      },
-      this.updateEvents(this.state.locations, numberOfEvents)
-    );
+    console.log(this.state.currentLocation, numberOfEvents);
+    this.setState({
+      numberOfEvents,
+    });
+    this.updateEvents(this.state.currentLocation, numberOfEvents);
   };
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
@@ -60,7 +60,6 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateNumberOfEvents={this.updateNumberOfEvents}
         />
-
         <EventList
           events={this.state.events}
           numberOfEvents={this.state.numberOfEvents}
