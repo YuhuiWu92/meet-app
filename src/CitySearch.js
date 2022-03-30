@@ -29,16 +29,16 @@ export default class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <h5>search events in your city</h5>
         <input
           type="text"
           className="city"
+          placeholder="search events in your city"
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => {
             this.setState({ showSuggestions: true });
           }}
-        />
+        ></input>
         <ul
           className="suggestions"
           style={this.state.showSuggestions ? {} : { display: "none" }}
