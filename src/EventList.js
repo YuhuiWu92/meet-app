@@ -8,7 +8,7 @@ export default class EventList extends Component {
     return (
       <ul className="EventList">
         {events.map((event) => (
-          <Col xs={12} md={10} key={event.id}>
+          <Col xs={12} md={10} key={event.id} className="eventcard">
             <Event event={event} />
           </Col>
         ))}

@@ -27,7 +27,7 @@ describe("<App /> component", () => {
 
 describe("<App /> integration", () => {
   /* making sure that EventList gets events as a prop from App */
-  test('App passes "events" state as a prop to EventList', (events) => {
+  test('App passes "events" state as a prop to EventList', () => {
     const AppWrapper = mount(<App />);
     const AppEventState = AppWrapper.state("events");
     expect(AppEventState).not.toEqual(undefined);
@@ -36,7 +36,7 @@ describe("<App /> integration", () => {
   });
 
   /* making sure that NumberOfEvents gets numberOfEvents as a prop from App */
-  test('App passes "numberOfEvents" state as a prop to EventList', (events) => {
+  test('App passes "numberOfEvents" state as a prop to EventList', () => {
     const AppWrapper = mount(<App />);
     const AppNumberState = AppWrapper.state("numberOfEvents");
     expect(AppNumberState).not.toEqual(undefined);
