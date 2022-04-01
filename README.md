@@ -1,7 +1,7 @@
 # meet-app
 
 A progressive web app (PWA) with the ability to work offline and a serverless backend developed using a test-driven development (TDD) technique.
-![This is an image](/src/img/meet_app.png)
+![This is an image](/public/meet-app.png)
 
 ## Git-Page:
 
