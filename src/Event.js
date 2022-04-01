@@ -28,6 +28,7 @@ export default class Event extends Component {
           </p>
           <Button
             variant="outline-success"
+            size="sm"
             className="details-btn"
             onClick={() => this.handleDetail()}
           >
