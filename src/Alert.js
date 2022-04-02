@@ -7,18 +7,16 @@ export default class Alert extends Component {
   }
   getStyle = () => {
     return {
-      color: this.color,
+      backgroundColor: this.backgroundColor,
       fontSize: "16px",
-      fontWeight: "",
+      fontWeight: "700",
     };
   };
 
   render() {
     return (
       <div className="Alert">
-        <strong className="AlertInfo" style={this.getStyle()}>
-          {this.props.text}
-        </strong>
+        <p style={this.getStyle()}>{this.props.text}</p>
       </div>
     );
   }
@@ -27,20 +25,20 @@ export default class Alert extends Component {
 export class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = "blue";
+    this.backgroundColor = "blue";
   }
 }
 
 export class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = "red";
+    this.backgroundColor = "red";
   }
 }
 
 export class WarningAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = "green";
+    this.backgroundColor = "orange";
   }
 }

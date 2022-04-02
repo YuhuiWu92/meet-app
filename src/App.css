@@ -140,9 +140,20 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  padding: 1px;
+  color: white;
 }
+
+/* .closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+} */
 
 .data-vis-wrapper {
   display: flex;
