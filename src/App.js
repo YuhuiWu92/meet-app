@@ -3,6 +3,8 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
+import { OfflineAlert } from "./Alert";
+
 import "./nprogress.css";
 import "./App.css";
 class App extends Component {
@@ -11,6 +13,7 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: "",
+    OfflineAlertText: "",
   };
   componentDidMount() {
     this.mounted = true;
@@ -21,9 +24,17 @@ class App extends Component {
           locations: extractLocations(events),
         });
       }
+      if (!navigator.onLine) {
+        this.setState({
+          OfflineAlertText: "no internet connection",
+        });
+      } else {
+        this.setState({
+          OfflineAlertText: "",
+        });
+      }
     });
   }
-
   componentWillUnmount() {
     this.mounted = false;
   }
@@ -64,6 +75,7 @@ class App extends Component {
           events={this.state.events}
           numberOfEvents={this.state.numberOfEvents}
         />
+        <OfflineAlert text={this.OfflineAlertText} />
       </div>
     );
   }
