@@ -1,12 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 2% 5%;
-}
 
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+  
 .App * {
   box-sizing: border-box;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 0; }
 
 ul {
   padding: 0;
