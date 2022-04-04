@@ -5,6 +5,7 @@ import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 import { OfflineAlert } from "./Alert";
 import WelcomeScreen from "./WelcomeScreen";
+import { EventGenre } from "./EventGenre";
 import "./nprogress.css";
 import "./App.css";
 class App extends Component {
@@ -71,22 +72,22 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.showWelcomeScreen === undefined)
-      return <div className="App" />;
+    const { locations, numberOfEvents, events } = this.state;
+    /* if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />; */
     return (
       <div className="App">
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
+        <h1>Meet App</h1>
+        <h4>Choose your nearest city</h4>
+        <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
-          updateNumberOfEvents={this.updateNumberOfEvents}
+          numberOfEvents={numberOfEvents}
+          updateNumberOfEvents={this.updateEvents}
         />
-        <EventList
-          events={this.state.events}
-          numberOfEvents={this.state.numberOfEvents}
-        />
+        <div className="data-vis-wrapper">
+          <EventGenre />
+        </div>
+        <EventList events={events} numberOfEvents={numberOfEvents} />
         <OfflineAlert text={this.OfflineAlertText} />
         <WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
