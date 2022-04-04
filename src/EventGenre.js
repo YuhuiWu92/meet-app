@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+/* import React, { useEffect,useState } from "react";
 import{
     PieChart, Pie, Cell, ResponsiveContainer
 } from 'recharts';
@@ -10,6 +10,14 @@ const EventGenre =((events)=> {
         { name: "Group C", value: 300 },
         { name: "Group D", value: 200 }
     ];
+    getData=()=>{
+        const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
+        const value = filter({summary}=> split(' ') each summary by 
+        space to turn the summary into an array of words.)
+        const value = filter({summary}=> “code from previous steps” ).length
+        const data = genres.map((genre)=>{})
+        return return { name: genre, value };
+    }
     return(
         <ResponsiveContainer>
             <PieChart>
@@ -28,4 +36,4 @@ const EventGenre =((events)=> {
         </ResponsiveContainer>
     )
 }
-export default EventGenre;
+export default EventGenre; */
