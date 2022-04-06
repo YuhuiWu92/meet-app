@@ -111,7 +111,7 @@ class App extends Component {
       );
     return (
       <div className="App">
-        <OfflineAlert text={this.OfflineAlertText} />
+        <OfflineAlert text={this.state.OfflineAlertText} />
         <div className="title-wrapper">
           <h1>Meet App</h1>
           <h3>Connect and learn with developers worldwide.</h3>
@@ -128,7 +128,7 @@ class App extends Component {
         <div className="data-wrapper">
           <h4>Events in each city</h4>
           <div className="data-vis-wrapper">
-            <EventGenre className="pie-chart" events={events} />
+            <EventGenre className="pie-chart" events={this.state.events} />
             <ResponsiveContainer height={400}>
               <ScatterChart
                 margin={{
