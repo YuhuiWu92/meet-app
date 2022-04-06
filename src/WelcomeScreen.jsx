@@ -2,10 +2,10 @@ import React from "react";
 import "./WelcomeScreen.css";
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
-    <div className="WelcomeScreen">
+    <div className="WelcomeScreen" text-align="center">
       <br /> <br />
-      <h1>Welcome to the Meet app</h1>
-      <h4>
+      <h1 text-align="center">Welcome to the Meet app</h1>
+      <h4 text-align="center">
         Log in to see what's happening in the Tech World! Just search the
         upcoming events around the world for full-stack developers.
       </h4>
@@ -33,6 +33,7 @@ o.svg"
       <a
         href="https://yuhuiwu92.github.io/meet-app/privacy.html"
         rel="nofollow noopener"
+        text-align="center"
       >
         Privacy policy
       </a>
