@@ -111,15 +111,15 @@ class App extends Component {
       );
     return (
       <div className="App">
-        <OfflineAlert text={this.OfflineAlertText} />)
+        <OfflineAlert text={this.OfflineAlertText} />
         <div className="title-wrapper">
-          <h1>Meet App</h1> worldwide.
-          <h3>Connect and learn with developers</h3>
+          <h1>Meet App</h1>
+          <h3>Connect and learn with developers worldwide.</h3>
         </div>
         <div className="input-wrapper">
           <h5>Choose your nearest city</h5>
           <CitySearch locations={locations} updateEvents={this.updateEvents} />
-          <h5 className="description-text">Number of events:</h5>
+
           <NumberOfEvents
             numberOfEvents={numberOfEvents}
             updateNumberOfEvents={this.updateEvents}
