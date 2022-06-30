@@ -9,7 +9,7 @@ https://yuhuiwu92.github.io/meet-app/
 
 ## Features and Requirements
 
-### Key Features:u
+### Key Features:
 
 ● Filter events by city.
 ● Show/hide event details.
